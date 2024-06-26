@@ -1,0 +1,24 @@
+{% include '../header.html' %}
+
+<h1>Название - {{ products_detail.name }}</h1>
+<img src="{{ products_detail.image.url }}" width="350" height="250">
+<p>О товаре - {{ products_detail.about_product }}</p>
+<p>Цена - {{ products_detail.price }}</p>
+<data>Дата опубликование - {{ products_detail.published }}</data>
+
+<h1></h1>
+<button><a href="/rewiews/">Оставить отзыв</a></button>
+<h1>Отзывы</h1>
+
+
+<ul>
+{% for i in products_detail.rewiews_product.all %}
+    <li>
+    <h1>{{ i.stars }}</h1>
+    <p>{{ i.text }}</p>
+    <p>{{ i.created_at }}</p>
+    </li>
+</ul>
+{% endfor %}
+{% include '../footer.html' %}
+

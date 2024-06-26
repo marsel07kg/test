@@ -1,0 +1,22 @@
+{% include "../header.html" %}
+<h1>Вы на главной странице</h1>
+<h2>
+    {% for i in menu_list %}
+    {{ i.slogan }}
+    {% endfor %}
+</h2>
+{% for o in video_url %}
+<iframe src="{{ o.video }}"></iframe>
+    {% endfor %}
+
+<ul>
+    {% for p in popular_product %}
+    <li>
+        {{ p.product }}
+        <img src="{{ p.photo.url }}" alt="" width="300" height="250">
+        <p>{{ p.price }}</p>
+    </li>
+    {% endfor %}
+</ul>
+
+{% include "../footer.html" %}

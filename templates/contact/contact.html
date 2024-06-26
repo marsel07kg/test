@@ -1,0 +1,8 @@
+{% include '../header.html' %}
+
+{% for i in contact_list %}
+<p>{{ i.number }}</p>
+<p>{{ i.street }}</p>
+
+{% endfor %}
+{% include '../footer.html' %}

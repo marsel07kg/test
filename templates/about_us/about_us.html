@@ -1,0 +1,8 @@
+{% include '../header.html' %}
+
+{% for i in shop_list %}
+<p>{{ i.shop }}</p>
+<img src="{{ i.image.url }}" width="350" height="250">
+
+{% endfor %}
+{% include '../footer.html' %}

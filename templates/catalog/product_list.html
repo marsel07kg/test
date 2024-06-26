@@ -1,0 +1,19 @@
+{% include '../header.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'image/style.css' %}">
+
+<h1> ваш инвентарь</h1>
+
+{% for i in product_list %}
+    <img src="{{ i.image.url }}" class="image">
+    <h5>{{ i.name }}</h5>
+    <p>{{ i.price }}</p>
+    <button><a href="/catalog/{{i.id}}/">подробнее</a></button>
+
+
+{% endfor %}
+
+
+
+
+{% include '../footer.html' %}
